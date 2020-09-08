@@ -2,7 +2,7 @@ const express = require('express');
 const User = require('../Models/User');
 const Task = require('../Models/Task')
 const auth = require('../middleware/auth');
-
+const TaskController = require('../controller/task')
 
 
 const router = express.Router();
@@ -56,18 +56,11 @@ router.get('/' , auth ,  async (req, res) => {
 //@desc delete a task
 //@access private
 
-router.delete('/:taskId', auth , async (req, res) => {
-    try {
-        const deleteTask = await Task.findOne(req.params.taskId);
+router.delete('/:taskId', auth , TaskController.deleteTaskById )
 
-        await deleteTask.remove();
+//@desc Get Single post By id
+//@access private
 
-        res.status(200).json({msg : "Task Deleted"});
-
-    } catch (err) {
-        console.log(err.messages);
-        return res.status(500).send('server error')
-    }
-})
+router.get('/:taskId' , auth , TaskController.getTaskById)
 
 module.exports = router
