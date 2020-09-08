@@ -1,0 +1,6 @@
+{
+	"MONGO_URI": "mongodb+srv://test:test@lpudevapp.uj2xp.mongodb.net/shopBackend?retryWrites=true&w=majority",
+	"JWT_SECRET": "THISISACLASSIFIEDKEYYOUCANNOTACCESSTHIS",
+	"GOOGLE_CLIENT_ID": "974965015297-7mrtdit9bggjtk5tnvqd0jv3s9d4lbj6.apps.googleusercontent.com",
+	"GOOGLE_CLIENT_SECRET": "oxI9k3ZDNlNp-EDZvuHPqEXH"
+}
