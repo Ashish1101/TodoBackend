@@ -4,19 +4,21 @@ const mongoDb = require('./config/db')
 const passport = require('passport')
 const cookieSession = require('cookie-session')
 //require('./passport/passport')(passport);
+const cors = require('cors')
 
 //port
 const PORT = process.env.PORT || 5000;
 
 //passport
-app.use(passport.initialize());
-app.use(passport.session())
+// app.use(passport.initialize());
+// app.use(passport.session())
 
-app.use(cookieSession({
-  name: 'session',
-  keys: ['key1', 'key2']
-}))
+// app.use(cookieSession({
+//   name: 'session',
+//   keys: ['key1', 'key2']
+// }))
 
+app.use(cors())
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({extended : false}))

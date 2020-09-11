@@ -16,7 +16,6 @@ router.post('/' , auth , async (req, res) => {
         const  {title , info} = req.body
         const task = await Task({
            title,
-           info,
            user: req.user.id
         });
 
