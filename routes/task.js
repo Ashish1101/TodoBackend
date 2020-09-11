@@ -11,7 +11,7 @@ const router = express.Router();
 //route /task/
 //access private
 
-router.post('/' , auth , async (req, res) => { 
+router.post('/' , async (req, res) => { 
     try {
         const  {title , info} = req.body
         const task = await Task({
